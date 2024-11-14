@@ -48,6 +48,7 @@ syntax match aspNumber /\v\-?\d+/
 syntax match aspFloat /\v\-?\d+([eE][+-]?\d+)?/
 syntax match aspFloat /\v\-?\d*\.\d+([eE][+-]?\d+)?/
 syntax match aspNumber /\v\-?0[xX]\x+/
+syntax match aspNumber /\v\-?0[bB][01]+/
 
 " Comments.
 syntax match aspComment "\v\#.*$"
