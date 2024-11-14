@@ -38,12 +38,15 @@ syntax match aspIdentifier /\v<\h\w*>/
 let s:aspOpChars = '!%&*+\-./:<=>^`|~'
 let s:aspValidChars = s:aspOpChars . '"#''(),;\[\\\]{}[:ident:][:space:]'
 exec 'syntax match aspError _\V\[^' . s:aspValidChars . ']_'
-exec 'syntax match aspOperator _\V\[' . s:aspOpChars . ']_'
-syntax match aspDelimiter _\V\[,;]_
+exec 'syntax match aspError _\V\[' . s:aspOpChars . ']_'
+syntax match aspOperator _\V\[+\-*/%<>=&^|.`~]_
+syntax match aspDelimiter _\V\[,:;]_
 syntax match aspSpecial _\V\\_
-
-" Special character combinations, to avoid conflicts with other rules.
-syntax match aspOperator "\V.."
+syntax match aspOperator _\V\(\[*/<>.=]\)\1_
+syntax match aspOperator _\V\[+\-*/%<>&^|!]=_
+syntax match aspOperator _\V<-_
+syntax match aspOperator _\V\(\[*/<>]\)\1=_
+syntax match aspOperator _\V<=>_
 syntax match aspConstant "\V..."
 
 " Numbers.
