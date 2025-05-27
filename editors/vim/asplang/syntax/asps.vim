@@ -12,12 +12,12 @@ endif
 syntax case match
 
 " Keywords.
-syntax keyword aspStatement def lib
-syntax keyword aspInclude include
+syntax keyword aspStatement as def lib
+syntax keyword aspInclude import include
 syntax keyword aspConstant None
 syntax keyword aspBoolean False True
-syntax keyword aspReserved and as assert break class continue del elif else
-syntax keyword aspReserved except exec finally for from global if import in is
+syntax keyword aspReserved and assert break class continue del elif else
+syntax keyword aspReserved except exec finally for from global if in is
 syntax keyword aspReserved lambda local nonlocal not or pass raise return try
 syntax keyword aspReserved while with yield
 
