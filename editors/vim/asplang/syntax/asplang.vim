@@ -14,13 +14,13 @@ syntax case match
 " Keywords.
 syntax keyword aspConstant None
 syntax keyword aspBoolean False True
-syntax keyword aspStatement as assert break continue def del local global pass
-syntax keyword aspStatement return
+syntax keyword aspStatement as assert break class continue def del local global
+syntax keyword aspStatement pass return
 syntax keyword aspConditional elif else if
 syntax keyword aspRepeat for while
 syntax keyword aspOperator and in is not or
 syntax keyword aspInclude from import
-syntax keyword aspReserved class except exec finally lambda nonlocal raise try
+syntax keyword aspReserved except exec finally lambda nonlocal raise try
 syntax keyword aspReserved with yield
 
 " Strings with embedded escape sequences.
