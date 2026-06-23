@@ -12,14 +12,14 @@ endif
 syntax case match
 
 " Keywords.
-syntax keyword aspStatement as def lib
+syntax keyword aspStatement as class def lib
 syntax keyword aspInclude import include
 syntax keyword aspConstant None
 syntax keyword aspBoolean False True
-syntax keyword aspReserved and assert break class continue del elif else
-syntax keyword aspReserved except exec finally for from global if in is
-syntax keyword aspReserved lambda local nonlocal not or pass raise return try
-syntax keyword aspReserved while with yield
+syntax keyword aspReserved and assert break continue del elif else syntax
+syntax keyword aspReserved keyword aspReserved except exec finally for from
+syntax keyword aspReserved global if in is lambda local nonlocal not or pass
+syntax keyword aspReserved raise return try while with yield
 
 " Strings with embedded escape sequences.
 syntax region aspString
@@ -33,11 +33,11 @@ syntax match aspEscape /\v\\\d{3}/ contained
 syntax match aspIdentifier /\v<\h\w*>/
 
 " Special characters.
-let s:aspOpChars = '*\='
+let s:aspOpChars = '+\-*\='
 let s:aspValidChars = s:aspOpChars . '"#''()\-.,\\[:ident:][:space:]'
 exec 'syntax match aspError _\V\[^' . s:aspValidChars . ']_'
 exec 'syntax match aspOperator _\V\[' . s:aspOpChars . ']_'
-syntax match aspDelimiter _\V,_
+syntax match aspDelimiter _\V\[,:]_
 syntax match aspSpecial _\V\\_
 
 " Special character combinations, to avoid conflicts with other rules.
